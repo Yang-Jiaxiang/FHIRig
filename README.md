@@ -1,4 +1,4 @@
-# view  
+# View  
 ![image](https://user-images.githubusercontent.com/81738019/184935591-c034e6f3-9f48-48ba-b900-5e42e533e93c.png)
 
 
