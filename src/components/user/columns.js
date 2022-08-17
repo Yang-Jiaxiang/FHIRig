@@ -1,26 +1,24 @@
 import { Space, Table, Tag } from "antd";
 
+import { deleteUser } from "../../axios/user";
+
 const columns = [
     {
-        title: "name",
-        dataIndex: "name",
-        key: "name",
+        title: "FirstName",
+        dataIndex: "firstName",
+        key: "firstName",
         render: (text) => <a>{text}</a>,
     },
     {
-        title: "Age",
-        dataIndex: "age",
-        key: "age",
+        title: "LastName",
+        dataIndex: "lastName",
+        key: "lastName",
+        render: (text) => <a>{text}</a>,
     },
     {
         title: "Email",
         dataIndex: "email",
         key: "email",
-    },
-    {
-        title: "League",
-        key: "league",
-        dataIndex: "league",
     },
     {
         title: "Action",
@@ -29,8 +27,8 @@ const columns = [
             <Space size="middle">
                 <a
                     style={{ color: "#fc86ad" }}
-                    onClick={() => {
-                        console.log(record);
+                    onClick={async () => {
+                        await deleteUser(record._id);
                     }}
                 >
                     Delete
