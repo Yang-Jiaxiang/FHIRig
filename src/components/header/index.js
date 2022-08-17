@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "antd";
 import { Adminmenuitem, Usermenuitem } from "./menuitem";
-import Router from "../../Router.js";
 
 import LoginUser from "../../login_user.json";
 
@@ -12,31 +11,19 @@ const Header = () => {
         setCurrent(e.key);
     };
 
+    //獲取URL提供給Header的current
+    useEffect(() => {
+        setCurrent(window.location.pathname.substring(1));
+    }, [window.location.pathname]);
+
     return (
         <>
-            {
-                //判斷使用者為admin 顯示使用這管理，不是admin則為普通用戶顯示資料庫與登出
-            }
-            {LoginUser.userType === "admin" ? (
-                <Menu
-                    onClick={onClick}
-                    selectedKeys={[current]}
-                    mode="horizontal"
-                    items={Adminmenuitem}
-                />
-            ) : (
-                <Menu
-                    onClick={onClick}
-                    selectedKeys={[current]}
-                    mode="horizontal"
-                    items={Usermenuitem}
-                />
-            )}
-
-            {
-                //下方為Router
-            }
-            <Router current={current} />
+            <Menu
+                onClick={onClick}
+                selectedKeys={[current]}
+                mode="horizontal"
+                items={Adminmenuitem}
+            />
         </>
     );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Space, Table, Tag } from "antd";
 import columns from "../components/user/columns";
-import data from "../userData";
 import { getUsers } from "../axios/user";
 
 const User = () => {

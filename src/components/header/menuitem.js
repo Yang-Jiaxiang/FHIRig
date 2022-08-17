@@ -7,7 +7,7 @@ import {
 //提供admin Header
 export const Adminmenuitem = [
     {
-        label: "資料集",
+        label: <a href="/Data">資料集</a>,
         key: "Data",
         icon: <DatabaseOutlined />,
     },
@@ -18,11 +18,11 @@ export const Adminmenuitem = [
         children: [
             {
                 key: "AllUser",
-                label: "所有使用者",
+                label: <a href="/Users">使用者清單</a>,
             },
             {
                 key: "RegisterUser",
-                label: "使用者註冊",
+                label: <a href="/RegisterUser">使用這註冊</a>,
             },
         ],
     },
@@ -37,20 +37,3 @@ export const Adminmenuitem = [
     },
 ];
 
-//提供普通用戶 Header
-export const Usermenuitem = [
-    {
-        label: "資料集",
-        key: "Data",
-        icon: <DatabaseOutlined />,
-    },
-    {
-        label: (
-            <a href="/Login" rel="noopener noreferrer">
-                登出
-            </a>
-        ),
-        key: "SignOut",
-        icon: <LogoutOutlined />,
-    },
-];
